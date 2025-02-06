@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><h2>photofy generator</h2></title>
+        <style>
+            body{
+                background-color: rgb(23, 22, 22);
+                color: white
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            h2{
+                color:green
+            }
+            h3{
+                color: white
+            }
+            button{
+                background-color: darkgreen;
+                border-color: black;
+            }
+            form{
+                color: white
+            }
+        </style>
+    </head>
+
+    
+    <body>
+        <p><h2>photofy generator</h2></p>
+
+        <h3>choose a photo to create o playlist</h3>
+        <br>
+        <photospace>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="imageUpload">select a photo:</label>
+                <input type="file" id="imageUpload" name="image" accept="image/*">
+                <p><button type="submit">Send</button></p>
+            </form>
+        </photospace>
+    </body>
+</html>
