@@ -1,0 +1,26 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    color:green;
+}
+h3{
+    color: white;
+}
+button{
+    background-color: darkgreen;
+    border-color: black;
+}
+form{
+    color: white;
+}
+main{
+    left:50;
+}
