@@ -1,83 +1,125 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title><h2>photofy generator</h2></title>
-
-        <style>
-        {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photofy Generator</title>
+    <style>
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-        body{
+        body {
             background-color: #121212;
-            color: white
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        h2{
-            color:green;
-        }
-        h3{
             color: white;
+            display: flex;
+            flex-direction: column;
         }
-        button{
-            background-color: darkgreen;
-            border-color: rgb(2, 2, 2);
-        }
-        form{
-            color: white;
-        }
-        main{
-            left: 1500px;
-        }
-        .titlebar{
-
-            background-color:rgb(0, 0, 0);
-            position:fixed;
+        .topbar {
+            width: 100%;
+            height: 60px;
+            background-color: #181818;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
             left: 0;
             right: 0;
-            top: 0;
-            width: 196px;
-            padding: 24px;
-            display: flex;
+            z-index: 1000;
         }
-
-        </style>
-
-    </head>
-
-    
-    <body>
-        <topbar>
-        <div class="titlebar">
-        <div><h2>photofy generator</h2></div>
+        .topbar .user-info a {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .topbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .topbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            margin-top: 60px;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #000;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            color: #1DB954;
+        }
+        .sidebar button {
+            background-color: #1DB954;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        .main-content {
+            flex: 1;
+            padding: 50px;
+            text-align: center;
+        }
+        .upload-container {
+            margin-top: 20px;
+            background-color: #282828;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #1DB954;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Your Playlists</a>
+            <a href="#">Browse</a>
         </div>
-    </topbar>
-
-        <div class="songssidebar">
-
+        <div class="user-info"><a href="#">User: John Doe</a></div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Photofy Generator</h2>
+            <button onclick="location.href='#'">Sign In</button>
         </div>
-
-        <main>
-
-        <div><h3>choose a photo to create o playlist</h3> </div>
-        <br>
-        
-        <div class="image-upload">
-            <form action="#" method="post" enctype="multipart/form-data">
-                <label for="imageUpload">select a photo:</label>
-                <input type="file" id="imageUpload" name="image" accept="image/*">
-
-                <div class="commentinput">
-                    <label for="comment">informações adicionais para a playlist:</label>
-                    <input type="text" id="comment" name="comment" accept="comment/*">
-                </div>
-
-                <p><button type="submit">Send</button></p>
-            </form>
-
+        <div class="main-content">
+            <h3>Choose a photo to create a playlist</h3>
+            <div class="upload-container">
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <label for="imageUpload">Select a photo:</label>
+                    <input type="file" id="imageUpload" name="image" accept="image/*">
+                    <br>
+                    <label for="comment">Additional information for the playlist:</label>
+                    <input type="text" id="comment" name="comment">
+                    <br>
+                    <button type="submit">Generate Playlist</button>
+                </form>
+            </div>
         </div>
-    
-</main>
-    </body>
+    </div>
+</body>
 </html>
